@@ -313,6 +313,26 @@
   /* ── Footer ── */
   .footer { margin-top: 8px; display: flex; justify-content: space-between; align-items: center; font-family: var(--mono); font-size: 8.5px; color: var(--text-muted); letter-spacing: 0.12em; flex-shrink: 0; }
   .footer .acc { color: var(--accent); }
+  /* Hidden by user request: hide all projects (games), work experience sections and metrics */
+  [data-section="flagships"],
+  [data-section="others"],
+  [data-section="experience"],
+  [data-section="metrics"] {
+    display: none !important;
+  }
+    /* Also hide when printing / exporting to PDF */
+    @media print {
+      .proj,
+      .proj.flagship,
+      .proj.micro,
+      [data-section="flagships"],
+      [data-section="others"],
+      .exp,
+      [data-section="experience"],
+      [data-section="metrics"] {
+        display: none !important;
+      }
+    }
 </style>
 </head>
 <body>
@@ -340,15 +360,15 @@
           <div class="ascii-tag" data-cfg="personal.tagline">// ./bin/whoami --verbose</div>
           <h1 class="name"><span data-cfg="personal.name">Alessio Interlandi</span><span class="dot">.</span></h1>
           <p class="role">
-            <span class="arrow">▸</span><span data-cfg="personal.role1">Student</span>
-            <span class="sep">·</span><span data-cfg="personal.role2">Senior Unity Engineer</span>
-            <span class="sep">·</span><span class="yrs" data-cfg="personal.years">1+ months</span>
+            <span class="arrow">▸</span><span data-cfg="personal.role1">Studente</span>
+            <span class="sep">·</span><span data-cfg="personal.role2"></span>
+            <span class="sep">·</span><span class="yrs" data-cfg="personal.years">1 mese</span>
           </p>
         </div>
         <div class="right">
           <div class="row">
             <span class="k">email</span>
-            <span class="v"><a data-cfg-href="personal.email" href="mailto:alessiointerlandi0gmail.com"><span data-cfg="personal.email">alessiointerlandi0@gmail.com</span></a></span>
+            <span class="v"><a data-cfg-href="personal.email" href="mailto:alessiointerlandi0@gmail.com"><span data-cfg="personal.email">alessiointerlandi0@gmail.com</span></a></span>
           </div>
           <div class="row">
             <span class="k">phone</span>
@@ -360,7 +380,7 @@
           </div>
           <div class="row">
             <span class="k">github</span>
-            <span class="v"><a href="https://github.com/AlessioInterlandi/"><span data-cfg="personal.github">@alessiointerlandi</span></a></span>
+            <span class="v"><a href="https://github.com/AlessioInterlandi"><span data-cfg="personal.github">github.com/AlessioInterlandi</span></a></span>
           </div>
           <div class="row">
             <span class="k">based</span>
@@ -370,8 +390,7 @@
       </section>
 
       <div class="banner-strip">
-        <span class="seg" data-cfg-backed><!-- rebuilt by cv-config.js -->// worked_with: <span class="h">Microsoft</span> · <span class="h">Sony/Soneium</span> · <span class="h">Iskra</span> · <span class="h">SEI</span> · <span class="h">Startale</span> · <span class="h">Quickload</span></span>
-      </div>
+        <span class="seg" data-cfg-backed><!-- rebuilt by cv-config.js -->// worked_with: <span class="h">Microsoft</span> ·</span> · <span class="h">
     </div>
     <!-- /hero -->
 
@@ -382,19 +401,19 @@
         <span class="out">// 1.2KB</span>
       </div>
       <section class="about">
-        <p><b data-cfg="about.headline">I build multiplayer games that players keep coming back to — and the full infrastructure to run them.</b></p>
-        <p data-cfg-html="about.para1">I founded <span class="acc">Deep Monolith</span>, a boutique studio shipping competitive live service card games backed by Microsoft, Sony (Soneium), Iskra, SEI, Startale and Quickload. We've built branded gaming campaigns that drew <b>10,000+ concurrent players</b> inside a Roblox world, and educational games commissioned by CNR — Italy's National Research Council.</p>
-        <p data-cfg-html="about.para2">My stack: <span class="mono-inline">Unity</span> for client and gameplay, <span class="mono-inline">Nakama + Go</span> for backend, <span class="mono-inline">AWS + Terraform</span> for infrastructure. I design the systems that make live service games work — matchmaking, ranking ladders, seasonal content, Battle Pass, quest systems, game economies — then operate them post-launch using telemetry.</p>
-        <p style="color: var(--text-dim); font-size:10.5px;" data-cfg-html="about.footer">// Most engineers pick a lane. <b style="color:var(--text-strong)">I own the whole road.</b></p>
+        <p><b>I build interactive gameplay systems and explore how multiplayer games are structured from both the client and backend side.</b></p>
+        <p>I am currently a student with a strong focus on game development and software engineering. I recently completed a short experience (1 month) at Deep Monolith, where I worked closely with the team and gained hands-on exposure to how an independent game studio designs and develops its systems.</p>
+        <p>My technical foundation includes Unity for game development, with basic knowledge of C, C++, Java, and C#. I am particularly interested in how gameplay, networking, and backend systems connect to create scalable multiplayer experiences.</p>
+        <p style="color: var(--text-dim); font-size:10.5px;">I’m actively building my skills across both game client development and backend fundamentals, with the goal of contributing to real-time, systems-driven games in the future.</p>
       </section>
     </div>
     <!-- /about -->
 
     <!-- ── SECTION: metrics ── -->
     <div data-section="metrics">
-      <div class="metrics">
+      <!-- <div class="metrics">
         <div class="m">
-          <div class="n"><span data-cfg-metric-val="0">8</span><span class="unit" data-cfg-metric-unit="0">+yrs</span></div>
+          <div class="n"><span data-cfg-metric-val="0">8</span><span class="unit" data-cfg-metric-unit="0"</span></div>
           <div class="l" data-cfg-metric-label="0">Shipping<br>multiplayer</div>
         </div>
         <div class="m">
@@ -411,6 +430,7 @@
         </div>
       </div>
     </div>
+  -->
     <!-- /metrics -->
 
     <!-- ── SECTION: stack ── -->
@@ -427,33 +447,17 @@
               <span class="lead">Unity</span> <span class="sep">·</span> Addressables <span class="sep">·</span> TDD <span class="sep">·</span> Networking <span class="sep">·</span> Profiler</div>
           </div>
           <div class="stack-card">
-            <div class="h">Backend · Infra</div>
-            <div class="items">
-              <span class="lead">Nakama</span> <span class="sep">·</span> Docker <span class="sep">·</span> REST APIs · </span> Express<br>
-              <span class="lead">AWS</span> <span class="sep">·</span> <span class="lead">Terraform</span> <span class="sep">·</span> CI/CD <span class="sep">·</span> GitHub Actions<br>
-            </div>
           </div>
-          <div class="stack-card">
-            <div class="h">Tools <span class="ct">instruments</span></div>
-            <div class="items">
-              <span class="lead">GPT Codex</span> <span class="sep">·</span> <span class="lead">Claude Code</span> <span class="sep">·</span> Claude Skills<br>
-              Cursor <span class="sep">·</span> Scrum <span class="sep">·</span> Jira <span class="sep">·</span> Trello</span>
-            </div>
-          </div>
-        </div>
         <div class="stack-col">
          
           <div class="stack-card">
             <div class="h">Languages <span class="ct">code</span></div>
             <div class="chips">
+              <span class="chip lead">Java</span>
+              <span class="chip">HTML</span>
+              <span class="chip">CSS</span>
+              <span class="chip">C</span>
               <span class="chip lead">C#</span>
-              <span class="chip lead">Go</span>
-              <span class="chip">JavaScript</span>
-              <span class="chip">Lua</span>
-              <span class="chip">Bash</span>
-              <span class="chip">Powershell</span>
-              <span class="chip">YAML</span>
-              <span class="chip">Python</span>
             </div>
           </div>
           
@@ -461,7 +465,7 @@
             <div class="h">Spoken</div>
             <ul class="langs">
               <li><span>Italian</span><span class="bar"><i style="width:100%"></i></span><span class="level">NATIVE</span></li>
-              <li><span>English</span><span class="bar"><i style="width:92%"></i></span><span class="level">C1 / PROF.</span></li>
+              <li><span>English</span><span class="bar"><i style="width:92%"></i></span><span class="level">B2 / Certified.</span></li>
             </ul>
           </div>
         </div>
@@ -494,7 +498,7 @@
         <span class="sigil">$</span><span class="cmd">find</span> <span class="arg">~/projects</span> <span class="flag">--filter</span> <span class="str">"flagship"</span> <span class="pipe">|</span> <span class="cmd">cat</span>
       </div>
 
-      <!-- HEROES OF HECANOS -->
+      <!-- 
       <section class="proj flagship">
         <div class="shot">
           <div class="img-frame">
@@ -524,7 +528,7 @@
         </div>
       </section>
 
-      <!-- DAWNSHARD -->
+       DAWNSHARD 
       <section class="proj flagship">
         <div class="shot">
           <div class="img-frame">
@@ -555,6 +559,7 @@
         </div>
       </section>
     </div>
+  -->
     <!-- /flagships -->
 
     <!-- ── SECTION: others ── -->
@@ -565,7 +570,7 @@
       <div class="mini-grid">
 
 
-
+      <!--
         <div class="proj micro">
           <div class="top"><span class="title">Mark &amp; Lara</span><span class="badge">STEAM</span><span class="date">2021</span></div>
           <div class="desc">Cooperative asynchronous detective narrative — PC, Mac, Linux, iOS, Android, Steam.</div>
@@ -635,6 +640,7 @@
         
       </div>
     </div>
+  -->
     <!-- /others -->
 
     <!-- ── SECTION: experience ── -->
@@ -646,49 +652,49 @@
 
       <section class="exp">
         <div class="top">
-          <span class="title">Founder &amp; Technical Lead</span>
+          <span class="title">Aiuto game development</span>
           <span class="at">@</span>
-          <span class="org">Deep Monolith</span>
-          <span class="date">Jan 2019 — Present</span>
+          <span class="org">DeepMonolith</span>
+          <span class="date">15/05/2026 — 26/05/2026</span>
         </div>
         <ul class="bullets">
-          <li>Own full stack across every title: Unity client · Nakama/Go backend · AWS/Terraform infra · live ops. Studio backed by <b>Sony (Soneium)</b>, <b>Iskra</b>, <b>SEI</b>, <b>Startale</b>, <b>Quickload (by Microsoft)</b>.</li>
+          <li>Aiuto game development: supporto allo sviluppo, collaborazione con il team su meccaniche e sistemi di gioco.</li>
         </ul>
       </section>
 
       <section class="exp">
         <div class="top">
-          <span class="title">Game Design Instructor</span>
-          <span class="at">@</span>
-          <span class="org">Istituto Europeo di Design (IED)</span>
-          <span class="date">Sep 2025 — Present</span>
+          <span class="title"></span>
+          <span class="at"></span>
+          <span class="org"></span>
+          <span class="date"></span>
         </div>
         <ul class="bullets">
-          <li><b>60+ hours</b> of lectures on game design principles, systems thinking &amp; player psychology. Proprietary frameworks; hands-on prototyping and structured critique.</li>
+          <li><b></b> </li>
         </ul>
       </section>
 
       <section class="exp">
         <div class="top">
-          <span class="title">VR Developer — Multiplayer Live Events</span>
-          <span class="at">·</span>
-          <span class="org">Freelance / Contract</span>
-          <span class="date">2019 — 2020</span>
+          <span class="title"></span>
+          <span class="at"></span>
+          <span class="org"></span>
+          <span class="date"></span>
         </div>
         <ul class="bullets">
-          <li>Real-time multiplayer VR for live events — spatial audio, positional immersion. Zero-operator-intervention stability under live conditions.</li>
+          <li></li>
         </ul>
       </section>
 
       <section class="exp">
         <div class="top">
-          <span class="title">Unity Developer</span>
-          <span class="at">@</span>
-          <span class="org">Tiny Bull Studios</span>
-          <span class="date">Oct 2017 — Dec 2018</span>
+          <span class="title"></span>
+          <span class="at"></span>
+          <span class="org"></span>
+          <span class="date"></span>
         </div>
         <ul class="bullets">
-          <li><b>Blind</b> (PSVR + SteamVR) — core gameplay &amp; VR rendering optimisation. <b>Omen Exitio: Plague</b> (PC + Nintendo Switch) — scripting, branching state, UI, Switch port.</li>
+          <li</li>
         </ul>
       </section>
     </div>
@@ -699,7 +705,7 @@
       <div class="closing">
         <div class="line"><span class="sigil">$</span> ./contact <span class="amber">--from</span> <span class="magenta">"recruiter"</span></div>
         <div class="line out" style="margin-top: 4px; padding-left: 14px;">
-          <span data-cfg-html="closing.line1">// Open to senior or lead roles in <span class="acc">live service multiplayer</span>.</span><br>
+          <span data-cfg-html="closing.line1"><span class="acc"></span>.</span><br>
           <span data-cfg="closing.line2">// Remote or Turin-based. I own verticals — client to cloud, design to live ops.</span>
         </div>
         <div class="line" style="margin-top: 8px;">
