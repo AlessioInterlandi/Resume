@@ -1,6 +1,6 @@
 // =============================================================
 //  cv-config.js  —  CV Configuration
-//  Edit this file, then refresh Alessio Interlandi CV.html.
+//  Edit this file, then refresh index.html.
 //
 //  COLORS     → theme.colors.*
 //  FONTS      → theme.fonts.mono / sans / googleFonts
@@ -55,8 +55,8 @@ window.CV_CONFIG = {
   //  LAYOUT & CONTENT SECTIONS
   // ----------------------------------------------------------
   layout: {
-    page1: ["experience"],
-    page2: ["projects", "education_awards"]
+    page1: ["hero", "about", "stack"],
+    page2: ["experience", "closing"]
   },
 
   // ----------------------------------------------------------
@@ -64,39 +64,35 @@ window.CV_CONFIG = {
   // ----------------------------------------------------------
   personal: {
     fullName: "Alessio Interlandi",
-    title:    "Senior Unity Engineer // Full-Stack Multiplayer",
-    location: "Turin, Italy (Open to Remote)",
-    website:  "https://github.com/alessiointerlandi",
-    backedBy: ["Microsoft", "Sony Soneium", "Iskra", "SEI", "Startale"]
+    title:    "Game Dev Student // Unity & QA",
+    location: "Turin, Italy",
+    website:  "https://github.com/AlessioInterlandi"
+    // NOTA: nessun "backedBy" — non ci sono partnership aziendali da dichiarare.
   },
 
   // ----------------------------------------------------------
   //  ABOUT / SUMMARY  (Accepts inline HTML)
   // ----------------------------------------------------------
   about: {
-    para1: "I am a <span class=\"text-strong\">Senior Unity Engineer</span> and backend developer with 8+ years of technical experience. I founded <span class=\"text-strong\">Deep Monolith</span>, an independent game studio where we designed, engineered, and operated real-time multiplayer titles and web3 gaming infrastructure. Our systems powered experiences backed by companies and organizations including Startale and Soneium (by Sony), korean game publisher ISKRA, SEI and Quickload (backed by Microsoft Xbox).",
+    para1: "I'm a high school student in my final year of Computer Science, focused on game development. I'm currently building a Unity multiplayer survival game (island defense, fortress building, wave-based enemies) and S-Layers, a tabletop board game with a layered enemy system.",
 
-    para2: "My stack: <span class=\"mono-inline\">Unity</span> for client and gameplay, <span class=\"mono-inline\">Nakama + Go/JS</span> for backend, <span class=\"mono-inline\">AWS + Terraform</span> for infrastructure. I design the systems that make live service games work: matchmaking, ranking ladders, seasonal content, Battle Pass, quest systems, game economies — then operate them post-launch using telemetry.",
+    para2: "My stack: <span class=\"mono-inline\">Unity</span> and <span class=\"mono-inline\">C#</span> for gameplay programming, <span class=\"mono-inline\">Git/GitHub</span> for version control, plus structured game design documentation (GDDs). I'm interested in QA testing and bug-fixing work for indie Unity projects.",
 
     footer: ""
   },
 
   // ----------------------------------------------------------
-  //  METRICS  (the 4 stat boxes)
+  //  METRICS  (the 4 stat boxes) — currently hidden in layout,
+  //  left empty since there are no real metrics to report yet.
   // ----------------------------------------------------------
-  metrics: [
-    { value: "8",   unit: "+yrs",    label: "Shipping\nmultiplayer" },
-    { value: "15k", unit: "+MAU",    label: "Dawnshard\nplayers at peak" },
-    { value: "200k", unit: "+usd", label: "Raised\n from investors" },
-    { value: "7",   unit: " ppl",    label: "Team led\non Deep Monolith" }
-  ],
+  metrics: [],
 
   // ----------------------------------------------------------
   //  CLOSING  (line1 accepts inline HTML)
   // ----------------------------------------------------------
   closing: {
-    line1: "// Open to senior or lead roles in <span class=\"acc\">live service multiplayer</span>.",
-    line2: "// Remote. I own verticals — client to cloud, design to live ops.",
+    line1: "// Open to <span class=\"acc\">QA testing &amp; bug-fixing</span> collaborations on Unity projects.",
+    line2: "// Turin-based. Available remote for freelance testing/bug-fixing work.",
     email: "alessiointerlandi0@gmail.com"
   }
 };

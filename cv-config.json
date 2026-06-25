@@ -4,7 +4,7 @@
     "This file documents every configurable field.",
     "To apply changes in the browser, keep cv-config.js in sync",
     "(it wraps this exact data in `window.CV_CONFIG = { ... }`).",
-    "Then refresh Alessio Interlandi CV.html."
+    "Then refresh index.html."
   ],
 
   "theme": {
@@ -50,54 +50,43 @@
     "_comment": [
       "Controls the order sections appear on each page.",
       "page1 valid IDs: hero | about | metrics | stack",
-      "page2 valid IDs: flagships | others | experience | closing",
+      "page2 valid IDs: experience | closing",
       "Removing an ID hides that section. Duplicating is not supported."
     ],
-    "page1": ["hero", "about", "metrics", "stack"],
-    "page2": ["flagships", "others", "experience", "closing"]
+    "page1": ["hero", "about", "stack"],
+    "page2": ["experience", "closing"]
   },
 
   "personal": {
     "name":         "Alessio Interlandi",
     "tagline":      "// ./bin/whoami --verbose",
 
-    "role1":        "Founder @ deep_monolith",
-    "role2":        "Senior Unity Engineer",
-    "role3":        "Live Service Multiplayer",
-    "years":        "8+yrs",
+    "role1":        "Studente",
+    "role2":        "",
+    "years":        "5° anno · Informatica",
 
     "email":        "alessiointerlandi0@gmail.com",
-    "website":      "alessiointerlandi.dev",
-    "linkedin":     "/in/Alessio-Interlandi",
-    "github":       "@alessiointerlandi",
+    "github":       "AlessioInterlandi",
     "location":     "Turin, IT",
-    "locationNote": "remote-friendly",
 
     "version":      "v2026.05",
-    "status":       "open to senior/lead roles",
-
-    "backedBy": ["Microsoft", "Sony/Soneium", "Iskra", "SEI", "Startale", "Quickload"]
+    "status":       "open to QA & bug-fixing collabs"
   },
 
   "about": {
     "_comment": "para1 and para2 accept inline HTML (bold, span with class). headline and footer also accept HTML.",
-    "headline": "I build multiplayer games that players keep coming back to — and the full infrastructure to run them.",
-    "para1":    "I founded <span class=\"acc\">Deep Monolith</span>, a boutique studio shipping competitive live service card games backed by Microsoft, Sony (Soneium), Iskra, SEI, Startale and Quickload. We’ve built branded gaming campaigns that drew <b>10,000+ concurrent players</b> inside a Roblox world, and educational games commissioned by CNR — Italy’s National Research Council.",
-    "para2":    "My stack: <span class=\"mono-inline\">Unity</span> for client and gameplay, <span class=\"mono-inline\">Nakama + Go</span> for backend, <span class=\"mono-inline\">AWS + Terraform</span> for infrastructure. I design the systems that make live service games work — matchmaking, ranking ladders, seasonal content, Battle Pass, quest systems, game economies — then operate them post-launch using telemetry.",
-    "footer":   "// Most engineers pick a lane. <b style=\"color:var(--text-strong)\">I own the whole road.</b>"
+    "headline": "Studente di informatica al quinto anno, focalizzato su game development con Unity.",
+    "para1":    "Sto attualmente sviluppando un gioco multiplayer Unity (difesa di un'isola, costruzione di una fortezza, ondate di mostri su più livelli di difficoltà) e S-Layers, un board game con un sistema di nemici a strati chiamato Sistema Angelico.",
+    "para2":    "Stack: <span class=\"mono-inline\">Unity</span> e <span class=\"mono-inline\">C#</span> per la programmazione gameplay, <span class=\"mono-inline\">Git/GitHub</span> per il versionamento, documentazione di game design (GDD) strutturata. Interessato a collaborazioni di QA testing e bug fixing su progetti Unity.",
+    "footer":   ""
   },
 
-  "metrics": [
-    { "value": "8",   "unit": "+yrs",    "label": "Shipping\nmultiplayer" },
-    { "value": "10k", "unit": "+ccu",    "label": "Escada Roblox\nlive event" },
-    { "value": "300", "unit": "+ cards", "label": "Balanced via\ntelemetry" },
-    { "value": "7",   "unit": " ppl",    "label": "Team led\non Dawnshard" }
-  ],
+  "metrics": [],
 
   "closing": {
     "_comment": "line1 accepts inline HTML. line2 is plain text. email used in both the mail command and the mailto href.",
-    "line1": "// Open to senior or lead roles in <span class=\"acc\">live service multiplayer</span>.",
-    "line2": "// Remote or Turin-based. I own verticals — client to cloud, design to live ops.",
+    "line1": "// Open to <span class=\"acc\">QA testing &amp; bug-fixing</span> collaborations on Unity projects.",
+    "line2": "// Turin-based. Available remote for freelance testing/bug-fixing work.",
     "email": "alessiointerlandi0@gmail.com"
   }
 }
